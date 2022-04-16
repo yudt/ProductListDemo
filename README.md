@@ -1,8 +1,10 @@
 
-### 简介
-##### 商品列表DEMO，使用Vue作为代码框架
+### Brief Introduction
+##### Product List Demo using Vue Framework
 
-### 如何使用
-1. 新增商品：点击页面最顶部的“新增”按钮
-2. 修改商品：点击对应商品的“更新”按钮
-3. 删除商品：点击对应商品的“删除”按钮
+### Guide
+1. Adding Product：Click the "Add Product" button
+2. Updating Product Info：Click the "Update Info" button of the product
+you want to update
+3. Deleting Product：Click the "Delete" button of the product you
+want to delete

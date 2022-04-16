@@ -5,26 +5,26 @@
                     type="primary"
                     class="add-btn"
                     @click="onAdd"
-            >新增商品</el-button>
+            >Add Product</el-button>
             <el-table
                 class="product-table"
                 :data="list"
                 height="500px"
             >
                 <el-table-column
-                    label="商品名称"
+                    label="product name"
                     prop="title"
                     min-width="20px"
                     show-overflow-tooltip
                 ></el-table-column>
                 <el-table-column
-                        label="商品描述"
+                        label="desciption"
                         prop="description"
                         min-width="30px"
                         show-overflow-tooltip
                 ></el-table-column>
                 <el-table-column
-                        label="价格"
+                        label="price"
                         prop="price"
                         min-width="20px"
                 ></el-table-column>
@@ -35,13 +35,13 @@
                                 size="small"
                                 round
                                 @click="onUpdate(row)"
-                        >更新</el-button>
+                        >Update Info</el-button>
                         <el-button
                                 type="danger"
                                 size="small"
                                 round
                                 @click="onDel(row.id)"
-                        >删除</el-button>
+                        >Delete</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -53,12 +53,12 @@
         >
             <el-form :model="dialogForm" label-width="100px">
                 <el-form-item
-                    label="商品名称"
+                    label="Product Name"
                 >
                     <el-input v-model="dialogForm.title" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item
-                    label="商品描述"
+                    label="Description"
                 >
                     <el-input
                         v-model="dialogForm.description"
@@ -67,14 +67,14 @@
                     ></el-input>
                 </el-form-item>
                 <el-form-item
-                    label="价格"
+                    label="Price"
                 >
                     <el-input-number v-model="dialogForm.price"></el-input-number>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogFormVisible = false">取 消</el-button>
-                <el-button type="primary" @click="onDialogFormConfirm">确 定</el-button>
+                <el-button @click="dialogFormVisible = false">Cancel</el-button>
+                <el-button type="primary" @click="onDialogFormConfirm">Confirm</el-button>
             </div>
         </el-dialog>
     </div>
@@ -97,7 +97,7 @@
         },
         computed: {
             dialogTitle() {
-                return this.editingId? '编辑商品':'新增商品'
+                return this.editingId? 'Editing Info':'Adding Product'
             }
         },
         mounted() {
@@ -109,54 +109,54 @@
                 setTimeout(() => {
                     this.list = [{
                         id: 0,
-                        title: '打法上帝发誓',
+                        title: 'ABCDEFG',
                         price: 300,
-                        description: '打发范德萨打发沙发上'
+                        description: 'ldjjfsf'
                     }, {
                         id: 1,
-                        title: '艰苦艰苦士大夫',
+                        title: 'DFASFSF',
                         price: 200,
-                        description: '艾弗森东京地方地方'
+                        description: 'fdfsdaffjk'
                     }, {
                         id: 2,
-                        title: '撒地方',
+                        title: 'FJSDLF',
                         price: 300,
-                        description: '接口连接的看法'
+                        description: 'fsdfasdfsfsl'
                     }, {
                         id: 3,
-                        title: '礼服盛大私服',
+                        title: 'IDLFJASJ',
                         price: 300,
-                        description: '的数据库附件i'
+                        description: 'slfsdkjfasf'
                     }, {
                         id: 4,
-                        title: '和方法',
+                        title: 'FLLAJF',
                         price: 300,
-                        description: '阿迪斯发数据库里'
+                        description: 'dsjfaskfaklj'
                     }, {
                         id: 5,
-                        title: '奥利夫卡是的',
+                        title: 'ASDFSDS',
                         price: 300,
-                        description: '想法设法付款了'
+                        description: 'asdjlfdfd'
                     }, {
                         id: 6,
-                        title: '老师的分解算法',
+                        title: 'SFSDKFJK',
                         price: 300,
-                        description: '没事的发送大量'
+                        description: 'lkfsdfifs'
                     }];
                     this.loading = false;
                 }, 500)
             },
             onDel(id) {
-                this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
+                this.$confirm('Your data will be deleted permanently, really mean it?', 'Warning', {
+                    confirmButtonText: 'Confirm',
+                    cancelButtonText: 'Cancel',
                     type: 'warning'
                 }).then(() => {
                     const index = this.list.findIndex(i => i.id === id);
                     this.list.splice(index, 1);
                     this.$message({
                         type: 'success',
-                        message: '删除成功!'
+                        message: 'Deleted successfully!'
                     });
                 }).catch(() => {
 
@@ -172,7 +172,7 @@
                 }
             },
             onDialogFormConfirm() {
-                if (this.editingId) { // 编辑
+                if (this.editingId) { // editing
                     const index = this.list.findIndex(i => i.id === this.editingId);
                     this.list.splice(index, 1, { ...this.dialogForm, id: this.editingId });
                 } else { // 新增
