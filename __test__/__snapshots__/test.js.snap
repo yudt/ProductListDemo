@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`demo test render properly 1`] = `
+<div
+  class="bg"
+>
+  <div
+    class="main-content"
+  >
+    <el-button
+      class="add-btn"
+      type="primary"
+    >
+      Add Product
+    </el-button>
+     
+    <el-table
+      class="product-table"
+      data=""
+      height="500px"
+    >
+      <el-table-column
+        label="product name"
+        min-width="20px"
+        prop="title"
+        show-overflow-tooltip=""
+      />
+       
+      <el-table-column
+        label="desciption"
+        min-width="30px"
+        prop="description"
+        show-overflow-tooltip=""
+      />
+       
+      <el-table-column
+        label="price"
+        min-width="20px"
+        prop="price"
+      />
+       
+      <el-table-column />
+    </el-table>
+  </div>
+   
+  <el-dialog
+    title="Adding Product"
+  >
+    <el-form
+      label-width="130px"
+      model="[object Object]"
+    >
+      <el-form-item
+        label="Product Name"
+      >
+        <el-input
+          autocomplete="off"
+        />
+      </el-form-item>
+       
+      <el-form-item
+        label="Description"
+      >
+        <el-input
+          autocomplete="off"
+          type="textarea"
+        />
+      </el-form-item>
+       
+      <el-form-item
+        label="Price"
+      >
+        <el-input-number />
+      </el-form-item>
+    </el-form>
+     
+    <div
+      class="dialog-footer"
+      slot="footer"
+    >
+      <el-button>
+        Cancel
+      </el-button>
+       
+      <el-button
+        type="primary"
+      >
+        Confirm
+      </el-button>
+    </div>
+  </el-dialog>
+</div>
+`;

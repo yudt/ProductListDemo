@@ -1,5 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './main.js',
@@ -20,21 +20,7 @@ module.exports = {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['@babel/preset-env', { targets: "defaults",modules: false }],
-                        ],
-                        plugins: [
-                            [
-                                "component",
-                                {
-                                    "libraryName": "element-ui",
-                                    "styleLibraryName": "theme-chalk"
-                                }
-                            ]
-                        ]
-                    }
+                    loader: 'babel-loader'
                 }
             },
             {

@@ -51,7 +51,7 @@
             :visible.sync="dialogFormVisible"
             @closed="onDialogClosed"
         >
-            <el-form :model="dialogForm" label-width="100px">
+            <el-form :model="dialogForm" label-width="130px">
                 <el-form-item
                     label="Product Name"
                 >
@@ -206,7 +206,7 @@
     width: 85%;
 }
 .add-btn {
-    width: 100px;
+
 }
 .product-table {
     margin-top: 20px;
